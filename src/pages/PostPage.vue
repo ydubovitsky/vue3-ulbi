@@ -25,8 +25,8 @@
     <div class="loader" v-else>
       <h1>Loading...</h1>
     </div>
-    <div ref="observer" class="observer"></div>
-    <!-- <div class="pagination">
+    <div v-intersection="fetchMorePosts" class="observer"></div>
+    <div class="pagination">
       <div class="page-list">
         <div
           class="page-list-item"
@@ -40,7 +40,7 @@
           {{ page }}
         </div>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -144,20 +144,6 @@ export default {
   },
   mounted() {
     this.fetchPosts();
-
-    const observerDomEl = this.$refs.observer ;
-    const options = {
-      rootMargin: '0px',
-      threshold: 1.0
-    }
-
-    const callback = (entries, observer) => {
-      if(entries[0].isIntersecting) {
-        this.fetchMorePosts();
-      }
-    }
-    const observer = new IntersectionObserver(callback, options);
-    observer.observe(observerDomEl)
   },
   computed: {
     sortedPosts() {
