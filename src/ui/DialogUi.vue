@@ -7,19 +7,10 @@
 </template>
 
 <script>
+import toggleMixin from "@/mixins/toggleMixin";
 export default {
   name: "DialogUi",
-  props: {
-    isVisible: {
-      type: Boolean,
-      default: false,
-    },
-  },
-  methods: {
-    closeDialog() {
-      this.$emit('update:isVisible', false)
-    }
-  }
+  mixins: [toggleMixin]
 };
 </script>
 
