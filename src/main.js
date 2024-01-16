@@ -3,7 +3,7 @@ import App from './App.vue'
 import ui from '@/ui';
 import directives from '@/directives';
 import router from '@/router/router';
-import VIntersection from '@/directives/VIntersection';
+import store from '@/store';
 
 const app = createApp(App);
 
@@ -20,4 +20,5 @@ directives.forEach(directive => {
 app
   // через use можно подключить любые плагины и библиотеки
   .use(router)
+  .use(store)
   .mount('#app')

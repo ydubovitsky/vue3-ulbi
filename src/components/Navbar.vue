@@ -5,6 +5,7 @@
     <router-link to="posts">Posts</router-link> -->
     <ButtonUi @click="$router.push('/')">Main</ButtonUi>
     <ButtonUi @click="$router.push('/posts')">Posts</ButtonUi>
+    <ButtonUi @click="$router.push('/store')">Post Store</ButtonUi>
     <ButtonUi @click="$router.push('/about')">About</ButtonUi>
   </div>
 </template>
